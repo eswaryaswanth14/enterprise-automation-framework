@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Automation Test Suite" parallel="tests" thread-count="2">
+	<parameter name="browser" value="chrome" />
+
+	<listeners>
+		<listener class-name="com.enterprise.automation.listeners.TestListener" />
+	</listeners>
+
+	<test name="Login Tests">
+		<groups>
+			<run>
+				<include name="regression" />
+				<exclude name="slow" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.enterprise.automation.groups.GroupTest" />
+		</classes>
+	</test>
+	<test name="Parameter Tests">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.enterprise.automation.groups.ParameterTest" />
+		</classes>
+	</test>
+	<test name="Browser Parameter Tests">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.enterprise.automation.groups.ParameterTest" />
+		</classes>
+	</test>
+
+</suite>
