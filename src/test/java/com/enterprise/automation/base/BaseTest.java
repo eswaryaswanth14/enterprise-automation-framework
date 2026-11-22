@@ -16,8 +16,8 @@ public class BaseTest {
 		Log.info("Browser Started");
 		//		driver=DriverFactory.createDriver();
 		//		driver.get(ConfigReader.getProperty("url"));
-
-		DriverManager.setDriver(driver=DriverFactory.createDriver());
+	    WebDriver currentDriver = DriverFactory.createDriver();
+		DriverManager.setDriver(currentDriver);
 		driver=DriverManager.getDriver();
 		driver.get(ConfigReader.getProperty("url"));
 	}

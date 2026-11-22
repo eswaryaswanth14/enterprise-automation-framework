@@ -18,7 +18,7 @@ public class LoginTest extends BaseTest {
 	@Test
 	public void verifyLogin() {
 //		loginPage=new LoginPage(driver);
-		new LoginPage(DriverManager.getDriver());
+		loginPage=new LoginPage(DriverManager.getDriver());
 		loginPage.enterUserName("Admin");
 		loginPage.enterPassword("admin123");
 		loginPage.clickLogin();
